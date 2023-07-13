@@ -1,0 +1,22 @@
+{%extends "Pages/layout.html"%}
+{%block title%}
+    Home
+{%endblock%}
+
+{%block content%}
+<h2 class="w-100 text-center p-3 text-danger"> Đăng nhập </h2>
+<form method="POST">
+    {% csrf_token %}
+    {% for key, value in form.errors.items %}
+    {{value}}
+    {%endfor%}
+    
+    
+    
+    
+    <p><label>Tài khoản: </label>{{form.username}}</p>
+    <p><lable>Mật khẩu: </label>{{form.password}}</p>
+    <input type="hidden" name="next" value="/" />
+    <input type="submit" value="Đăng nhập" />
+</form>
+{%endblock%}

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Thông tin cá nhân</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Bài viết</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'register' %}">Đăng ký</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/NguoiDung/login">Đăng nhập</a>
+                  </li>
+                </ul>
+            </div>
+        </div>
+       <div class="row">
+           <h3 class="text-center">DANH SÁCH BÀI VIẾT</h3>
+           {% block content %} {% endblock %}
+       </div>
+    </div>
+
+
+    
+</body>
+</html>
